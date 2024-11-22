@@ -39,6 +39,7 @@ function App() {
     const {isOpen} = useBottonContent();
     useEffect(() => {
         const {tg} = getTg();
+        tg.BackButton.show();
         console.log('tg:', tg.initData)
     }, [])
     const router = createBrowserRouter([
