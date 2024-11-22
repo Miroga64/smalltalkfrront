@@ -33,8 +33,9 @@
 }
 
 .scroll {
-    overflow-x: scroll;
+    overflow: scroll;
     padding-bottom: 10px;
     height: 264px;
+    overscroll-behavior: none;
     display: flex;
 }

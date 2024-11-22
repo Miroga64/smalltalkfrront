@@ -30,6 +30,7 @@
     left: 0;
     top: 0;
     backdrop-filter: blur(10px) brightness(0.4);
+    -webkit-backdrop-filter: blur(10px) brightness(0.4);
     transition: opacity var(--default-transform), z-index .001s var(--default-transform);
 
     z-index: -1;

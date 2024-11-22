@@ -2,12 +2,21 @@ import { useEffect, useMemo } from "react"
 
 const useBlockGlobalScroll = () => {
     const setGlobalScroll = useMemo(() => (scrollBehavior: string) => {
-        document.documentElement.style.overflowY = scrollBehavior
+        const root = document.getElementById('root');
+
+        document.documentElement.style.overflow = scrollBehavior;
+        if(root) {
+            root.style.overflow = scrollBehavior;
+        }
     }, [])
 
     useEffect(() => {
         return () => {
-            document.documentElement.style.overflowY = 'scroll'
+            const root = document.getElementById('root');
+            if(root) {
+                root.style.overflow = 'auto';
+            }
+            document.documentElement.style.overflow = 'scroll'
         }
     }, [])
 
