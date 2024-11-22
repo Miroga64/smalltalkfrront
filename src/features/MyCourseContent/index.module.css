@@ -1,0 +1,25 @@
+.wrapper {
+    padding: 20px 8px;
+}
+
+.header {
+    padding-bottom: 24px;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: calc(100% - 48px);
+    bottom: 0;
+    left: auto;
+    right: auto;
+    height: 1px;
+    background-color: var(--disabled-button-background);
+}
+
+.listWrapper:not(:last-child) {
+    margin-bottom: 8px;
+}

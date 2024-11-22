@@ -1,0 +1,61 @@
+* {
+    box-sizing: border-box;
+    font-family: "Roboto Flex", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+    "slnt" 0,
+    "wdth" 88.7,
+    "GRAD" 2,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+.main {
+    transition: all .15s;
+}
+
+.dark {
+    --background-global: rgb(28, 28, 29);
+    --main-banner-bg: rgb(15, 15, 16);
+    --main-cards-bg: rgba(44, 44, 46, 1);
+    --bright-text-color: rgba(255, 255, 255, 1);
+    --button-bg-light: rgba(227, 227, 234, 1);
+    --button-bg-active: rgba(10, 132, 255, 1);
+    --number-text-color: rgba(167, 169, 188, 1);
+    --switcher-active-color: rgba(224, 193, 255, 1);
+    --switcher-active-bg-color: rgba(59, 59, 62, 1);
+    --switcher-disabled-color: rgba(129, 131, 147, 1);
+    --banner-text-color: rgba(73, 23, 121, 1);
+    --banner-count-background-color: rgba(183, 136, 229, 1);
+    --items-count: rgba(153, 167, 179, 1);
+    --star-color: rgba(255, 209, 100, 1);
+    --disabled-button-background: rgba(71, 71, 71, 1);
+    --disabled-button-text: rgba(134, 134, 134, 1);
+    --user-name-text: rgba(115, 126, 135, 1);
+    --profile-arrow-color: rgba(112, 112, 112, 1);
+
+    --tag-green: rgba(193, 255, 195, 1);
+    --tag-dark-green: rgba(52, 199, 89, 1);
+    --tag-purple: rgba(224, 193, 255, 1);
+    --tag-grey: rgba(146, 158, 177, 1);
+    --tag-blue: rgba(142, 175, 255, 1);
+
+    background-color: var(--background-global);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--background-global);
+}
+
+.bottomPadding {
+    padding-bottom: 108px;
+}

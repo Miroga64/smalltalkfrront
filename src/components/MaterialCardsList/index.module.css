@@ -1,0 +1,14 @@
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 26.4px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    font-variation-settings: 'wdth' 40, 'GRAD' 0, 'slnt' 0, 'XTRA' 468, 'XOPQ' 96, 'YOPQ' 79, 'YTLC' 514, 'YTUC' 712, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738;
+    margin-bottom: 8px;
+    color: var(--bright-text-color)
+}
+
+.itemWrapper {
+    margin-bottom: 4px;
+}

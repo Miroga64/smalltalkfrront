@@ -1,0 +1,23 @@
+.wrapper {
+    padding: 8px;
+    background-color: var(--background-global);
+}
+
+.title {
+    padding: 12px 16px;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 25;
+    color: var(--tag-purple)
+}
+
+.module {
+    margin-bottom: 8px;
+}
+
+.modulesContainer {
+    margin-top: 16px;
+}

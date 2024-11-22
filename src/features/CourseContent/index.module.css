@@ -1,0 +1,123 @@
+.wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: var(--background-global);
+    padding: 8px;
+    z-index: 2;
+    position: relative;
+    margin-top: 178px;
+}
+
+.header {
+    padding: 16px;
+}
+
+.chip {
+    margin-bottom: 12px;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 25;
+    color: var(--switcher-active-color)
+}
+
+.rating {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.number {
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: center;
+    margin-right: 4px;
+    color: var(--bright-text-color)
+}
+
+.start {
+    margin-right: 4px;
+}
+
+.reviews {
+    font-family: 'Inter';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.6px;
+    text-align: center;
+    color: var(--switcher-disabled-color)
+}
+.descriptionTitle {
+    font-family: 'Inter';
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+    color: var(--bright-text-color);
+    margin-bottom: 12px;
+}
+.description {
+    margin-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.list {
+    margin-top: 24px;
+}
+
+.corseButton {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22.4px;
+    text-align: center;
+    color: var(--switcher-active-color)
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 14.5px;
+    position: relative;
+    margin-left: 6px;
+    transform: rotate(-90deg);
+    margin-left: 8px;
+    min-width: max-content;
+}
+
+.arrow:after{
+    content: '';
+    width: 100%;
+    width: 9px;
+    height: 1.5px;
+    background-color: var(--banner-count-background-color);
+    position: absolute;
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.arrow:before{
+    content: '';
+    width: 100%;
+    width: 9px;
+    height: 1.5px;
+    background-color: var(--banner-count-background-color);
+    position: absolute;
+    right: 0;
+    transform: rotate(-45deg);
+}

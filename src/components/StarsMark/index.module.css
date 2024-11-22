@@ -1,0 +1,22 @@
+.wrapper {
+    display: flex;
+}
+
+.star {
+    overflow: hidden;
+    position: relative;
+    background-color: var(--main-cards-bg);
+    clip-path: polygon(50% 0%, 63% 28%, 98% 35%, 72% 57%, 79% 91%, 50% 75%, 21% 91%, 28% 57%, 2% 35%, 33% 28%);
+}
+
+.star:not(:last-child) {
+    margin-right: 2px;
+}
+
+.starFill {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--star-color);
+}

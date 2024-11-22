@@ -1,0 +1,67 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 8px;
+    border-radius: 10px;
+    background-color: var(--switcher-active-bg-color);
+}
+
+.title.INPROGRESS {
+    color: var(--tag-purple)
+}
+
+.title.COMPLETED {
+    color: var(--tag-green)
+}
+
+.title.BUYED {
+    color: var(--tag-dark-green);
+}
+
+.title.NEW {
+    color: var(--tag-grey)
+}
+
+.title.VIDEO {
+    color: var(--tag-green)
+}
+
+.title.FILE {
+    color: var(--tag-blue)
+}
+
+.title.CALENDAR {
+    color: var(--tag-grey)
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15.6px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 90, 'opsz' 40;
+}
+
+.icon {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-right: 6px;
+}
+
+.icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.title.caps {
+    text-transform: uppercase;
+}

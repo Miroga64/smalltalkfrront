@@ -1,0 +1,79 @@
+.wrapper {
+    background-color: var(--main-cards-bg);
+    min-width: 200px;
+    height: 254px;
+    padding: 8px;
+    border-radius: 20px;
+    margin-right: 4px;
+    display: block;
+    text-decoration: none;
+}
+
+.image {
+    width: 100%;
+    height: 152px;
+    border-radius: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 8px;
+}
+
+.content {
+    padding: 4px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    color: var(--bright-text-color);
+    letter-spacing: -0.01em;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 25;
+}
+
+.mark {
+    display: flex;
+    align-items: flex-start;
+}
+
+.markNumber {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15.6px;
+    margin-right: 4px;
+    color: var(--switcher-disabled-color);
+}
+
+.description {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: var(--switcher-disabled-color);
+}
+
+.star {
+    width: 12px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star svg {
+    width: 100%;
+    height: 100%;
+}

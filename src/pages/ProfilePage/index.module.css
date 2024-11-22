@@ -1,0 +1,13 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 8px;
+}
+
+.wrapper > *:first-child {
+    margin-bottom: 20px;
+}
+
+.list > *:not(:last-child) {
+    margin-bottom: 8px;
+}

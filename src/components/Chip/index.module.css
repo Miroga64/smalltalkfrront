@@ -1,0 +1,15 @@
+.wrapper {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15.6px;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 90, 'opsz' 40;
+    background-color: var(--banner-count-background-color);
+    padding: 4px 8px;
+    border-radius: 10px;
+    color: var(--bright-text-color);
+}
+
+.caps {
+    text-transform: uppercase;
+}

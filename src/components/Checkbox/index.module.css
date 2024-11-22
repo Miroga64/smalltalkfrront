@@ -1,0 +1,37 @@
+.label {
+    width: 50px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    background-color: var(--button-bg-light);
+    position: relative;
+    border-radius: 20px;
+
+    transition: all .15s;
+}
+
+.circle {
+    width: 26px;
+    height: 26px;
+    left: 2px;
+    border-radius: 20px;
+    background-color: var(--bright-text-color);
+    position: relative;
+
+    transition: all .15s;
+}
+
+.label.active {
+    background-color: var(--button-bg-active);
+}
+
+.label.active .circle {
+    left: 22px;
+}
+
+.input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}

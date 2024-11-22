@@ -1,0 +1,46 @@
+.switcher {
+    width: 100%;
+    display: flex;
+    height: 40px;
+    padding: 4px;
+    background-color: var(--main-cards-bg);
+    border-radius: 48px;
+    display: flex;
+    position: relative;
+}
+
+.switcherItem {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: var(--switcher-disabled-color);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    transition: all .15s;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.active {
+    color: var(--switcher-active-color);
+}
+
+.switcher:after {
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 2;
+    border-radius: 56px;
+    height: 32px;
+    width: calc(50% - 4px);
+    left: 50%;
+    background-color: var(--switcher-active-bg-color);
+    transition: all .15s;
+}
+
+.switcher.leftActive:after {
+    left: 4px;
+}

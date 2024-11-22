@@ -1,0 +1,55 @@
+.wrapper {
+    width: 100%;
+    background-color: var(--switcher-active-color);
+    border-radius: 20px;
+    padding: 16px;
+    margin-bottom: 24px;
+
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 25;
+    margin-bottom: 24px;
+    color: var(--banner-text-color)
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background-color: var(--banner-count-background-color);
+    margin-right: 10px;
+    color: var(--bright-text-color);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 25;
+}
+
+.description {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15.6px;
+    letter-spacing: -0.01em;
+    font-variation-settings: 'GRAD' 0, 'XOPQ' 96, 'XTRA' 468, 'YOPQ' 79, 'YTAS' 750, 'YTDE' -203, 'YTFI' 738, 'YTLC' 514, 'YTUC' 712, 'slnt' 0, 'wdth' 25;
+    max-width: 77px;
+    color: var(--banner-text-color)
+}

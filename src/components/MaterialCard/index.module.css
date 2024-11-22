@@ -1,0 +1,37 @@
+.wrapper {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--main-cards-bg);
+    border-radius: 24px;
+
+    text-decoration: none;
+    text-transform: none;
+    display: block;
+}
+
+.tag {
+    margin-bottom: 8px;
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.title {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+    color: var(--bright-text-color)
+}
+
+.preview {
+    margin-top: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 136px;
+    width: 100%;
+    border-radius: 6px;
+}
