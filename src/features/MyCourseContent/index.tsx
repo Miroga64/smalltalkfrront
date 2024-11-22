@@ -53,6 +53,7 @@ const MyCourseContent = () => {
             });
             setCurtainProps({isOpen: false, children: null});
         }
+    // eslint-disable-next-line
     }, [myCourse.status])
 
     return (
