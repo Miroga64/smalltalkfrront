@@ -22,6 +22,7 @@ const LessonContent = () => {
                 titleColor: `rgba(164, 164, 165, 1)`,
             },
         })
+    // eslint-disable-next-line
     }, [])
 
     const handleClick = useMemo(() => () => {
@@ -41,6 +42,7 @@ const LessonContent = () => {
                 }}
             />
         })
+    // eslint-disable-next-line
     }, [])
 
     

@@ -2,7 +2,6 @@ import { observer } from 'mobx-react'
 import style from './index.module.css'
 import Curtain from '../../components/Curtain'
 import ProfileHeader from '../../components/ProfileHeader'
-import { useState } from 'react'
 import { NOTIFICATIONS, PAYMENT } from '../../icons'
 import ProfileItem from '../../components/ProfileItem'
 

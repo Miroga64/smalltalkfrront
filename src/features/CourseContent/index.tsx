@@ -34,6 +34,7 @@ const CourseContent = () => {
                 isOpen: false,
             })
         }
+    // eslint-disable-next-line
     }, [])
 
     const FullCourseButton = useMemo(() => {

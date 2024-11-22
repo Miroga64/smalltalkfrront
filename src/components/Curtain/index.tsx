@@ -29,6 +29,7 @@ const Curtain = () => {
         } else {
             setGlobalScroll('scroll')
         }
+    // eslint-disable-next-line
     }, [isOpen])
 
     useEffect(() => {
