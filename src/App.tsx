@@ -40,6 +40,7 @@ function App() {
     useEffect(() => {
         const {tg} = getTg();
         tg.BackButton.show();
+        tg.disableVerticalSwipes()
         console.log('tg:', tg.initData)
     }, [])
     const router = createBrowserRouter([
