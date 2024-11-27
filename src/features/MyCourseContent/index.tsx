@@ -62,8 +62,10 @@ const MyCourseContent = () => {
                 <MyCourseCard
                     title={myCourse.title}
                     tagStatus={myCourse.tagStatus}
-                    currentProgress={myCourse.currentProgress}
-                    fullCount={myCourse.fullCount}
+                    progress={{
+                        completed: myCourse.currentProgress,
+                        total: myCourse.fullCount
+                    }}
                     status={myCourse.status}
                     id={myCourse.id}
                 />

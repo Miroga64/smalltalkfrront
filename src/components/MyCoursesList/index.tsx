@@ -2,8 +2,9 @@ import { observer } from "mobx-react"
 import { useState } from "react"
 import { useAppStore } from "../../hooks/useAppStore"
 import style from './index.module.css'
-import MyCourseCard, { MyCoursesInterface } from "../MyCourseCard"
+import MyCourseCard from "../MyCourseCard"
 import CompletedCurtain from "../CompletedCurtain"
+import { MyCoursesType } from "../../normalizers/myCourseNormalize"
 
 
 const MyCoursesList = () => {
@@ -13,19 +14,18 @@ const MyCoursesList = () => {
     return (
         <div className={style.wrapper}>
             {
-                myCourses.inprocess.map((course: MyCoursesInterface) => (
+                myCourses.inprocess.map((course: MyCoursesType) => (
                     <MyCourseCard
-                        title={course.title}
-                        tagStatus={course.tagStatus}
-                        currentProgress={course.currentProgress}
-                        fullCount={course.fullCount}
-                        status={course.status}
+                        {...course}
                         key={course.id}
-                        id={course.id}
                     />
                 ))
             }
-            <CompletedCurtain isOpen={isOpen} setIsOpen={setIsOpen} items={myCourses.completed}/>
+            {
+                myCourses.completed.length > 0 && (
+                    <CompletedCurtain isOpen={isOpen} setIsOpen={setIsOpen} items={myCourses.completed}/>
+                )
+            }
         </div>
     )
 }

@@ -13,13 +13,10 @@ const AvailableCategoryList = () => {
     return (
         <div className={style.wrapper}>
             {
-                availableCategories.map((category: any) => (
+                availableCategories.map((category) => (
                     <AvailableCategoryMemo
-                        key={category.id}
-                        image={category.image}
-                        count={category.count}
-                        name={category.name}
-                        id={category.id}
+                        {...category}
+                        key={category._id}
                     />
                 ))
             }

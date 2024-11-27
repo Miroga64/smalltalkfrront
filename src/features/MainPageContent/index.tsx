@@ -1,7 +1,7 @@
 import { useState } from "react"
 import style from './index.module.css'
 import SwitcherMemo, {SwitcherValuesEnum} from "../../components/Switcher"
-import AvailableCategoryListMemo from "../../components/AvailableCategoriesList";
+import AvailableCategoryList from "../../components/AvailableCategoriesList";
 import MyCoursesList from "../../components/MyCoursesList";
 import { observer } from "mobx-react";
 
@@ -15,7 +15,7 @@ const MainPageContent = () => {
             </div>
             {
                 switcherValue === SwitcherValuesEnum.AVAILABLE && (
-                    <AvailableCategoryListMemo />
+                    <AvailableCategoryList />
                 )
             }
             {

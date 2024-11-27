@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import style from './index.module.css'
-import Tag, { TagsTypes } from '../Tag';
+import Tag from '../Tag';
 import { observer } from 'mobx-react';
+import { MyCoursesType } from '../../normalizers/myCourseNormalize';
 
 
 export enum Statuses {
@@ -10,27 +11,17 @@ export enum Statuses {
     NEW = 'NEW',
 }
 
-export interface MyCoursesInterface {
-    title: string,
-    tagStatus: TagsTypes,
-    currentProgress: number,
-    fullCount: number,
-    status: Statuses,
-    id: string,
-}
-
 const statuses = {
     [Statuses.COMPLETED]: 'пройдено',
     [Statuses.INPROGRESS]: 'в работе',
     [Statuses.NEW]: 'новый',
 }
 
-const MyCourseCard = (props: MyCoursesInterface) => {
+const MyCourseCard = (props: MyCoursesType) => {
     const {
         title,
         tagStatus,
-        currentProgress,
-        fullCount,
+        progress,
         status,
         id
     } = props;
@@ -41,15 +32,15 @@ const MyCourseCard = (props: MyCoursesInterface) => {
             <div className={style.status}>
                 <div className={style.top}>
                     <div className={style.description}>{statuses[status]}</div>
-                    <div className={style.count}>{currentProgress}/{fullCount}</div>
+                    <div className={style.count}>{progress.completed}/{progress.total}</div>
                 </div>
                 <div className={style.bottom}>
                     {
-                        (currentProgress || currentProgress !== 0) && (
+                        (progress.completed || progress.completed !== 0) && (
                             <div
                                 className={style.progress}
                                 style={{
-                                    width: `${currentProgress / fullCount * 100}%`
+                                    width: `${progress.completed / progress.total * 100}%`
                                 }}
                             ></div>
                         )

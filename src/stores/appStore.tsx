@@ -1,23 +1,28 @@
 import {action, makeAutoObservable} from 'mobx'
 import fetchMock from '../api/mockApi'
 import { MocksEnum } from '../mock/mocks'
+import $api from '../api';
+import { CategoriesResponseType, MyCoursesResponseType } from '../api/types';
+import MyCoursesNormalize, { MyCoursesType } from '../normalizers/myCourseNormalize';
 
-// interface Category {
-//     image: string,
-//     name: string,
-//     count: number,
-//     id: number
-// }
+export interface MyCoursesInterface {
+    inprocess: Array<MyCoursesType>,
+    completed: Array<MyCoursesType>,
+}
 
 interface IAppStore {
-    availableCategories: any
+    availableCategories: Array<CategoriesResponseType>,
+    myCourses: MyCoursesInterface,
 }
 
 
 export class AppStore implements IAppStore {
     currentScroll: number = 0;
-    availableCategories: any = [];
-    myCourses: any = [];
+    availableCategories: Array<CategoriesResponseType> = [];
+    myCourses: MyCoursesInterface = {
+        inprocess: [],
+        completed: [],
+    };
     category: any = {};
     course: any = {};
     detailCourse: any = {};
@@ -25,19 +30,19 @@ export class AppStore implements IAppStore {
     lesson: any = {};
 
     @action getAvailableCategories = async () => {
-        return fetchMock(MocksEnum.AvailableCategories)
+        return $api.get<CategoriesResponseType>('/api/v1/catalog/categories')
     }
 
-    @action setAvailableCategories = (data: any) => {
+    @action setAvailableCategories = (data: Array<CategoriesResponseType>) => {
         this.availableCategories = data;
     }
 
     @action getMyCourses = async () => {
-        return fetchMock(MocksEnum.MyCourses)
+        return $api.get<MyCoursesResponseType>('/api/v1/users/me/courses/all')
     }
 
-    @action setMyCourses = (data: any) => {
-        this.myCourses = data;
+    @action setMyCourses = (data: Array<MyCoursesResponseType>) => {
+        this.myCourses = MyCoursesNormalize(data);
     }
 
     @action getCategory = () => {

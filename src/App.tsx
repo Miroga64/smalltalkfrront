@@ -17,6 +17,7 @@ import { useBottonContent } from './hooks/useBottomContent';
 import { useAppStore } from './hooks/useAppStore';
 import BottomContent from './components/BottomContent';
 import ProfilePage from './pages/ProfilePage';
+import ReturnedResponse from './helpers/returnedResponse';
 
 
 function App() {
@@ -56,8 +57,8 @@ function App() {
 
             loader: async () => {
                 const [categories, mycourses] = await Promise.all([getAvailableCategories(), getMyCourses()])
-                setAvailableCategories(categories)
-                setMyCourses(mycourses)
+                setAvailableCategories(ReturnedResponse(categories))
+                setMyCourses(ReturnedResponse(mycourses))
                 return null;
             },
         

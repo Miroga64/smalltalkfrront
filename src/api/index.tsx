@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const baseUrl = 'https://bff.smltlk.ru/docs'
+export const baseUrl = 'https://bff.smltlk.ru'
 
 const $api = axios.create({
     withCredentials: true,
@@ -10,8 +10,7 @@ const $api = axios.create({
 
 $api.interceptors.request.use((config) => {
     if (config && config.headers && sessionStorage.getItem('token')){
-        config.headers["access_token"] = `bearer ${sessionStorage.getItem('token')}`;
-        config.headers["token_type"] = `bearer`;
+        config.headers["Authorization"] = `bearer ${sessionStorage.getItem('token')}`;
         return config;
     }
     return config
