@@ -2,8 +2,11 @@ import {action, makeAutoObservable} from 'mobx'
 import fetchMock from '../api/mockApi'
 import { MocksEnum } from '../mock/mocks'
 import $api from '../api';
-import { CategoriesResponseType, MyCoursesResponseType } from '../api/types';
+import { CategoriesResponseType, CategoryResponseType, MyCoursesResponseType } from '../api/types';
 import MyCoursesNormalize, { MyCoursesType } from '../normalizers/myCourseNormalize';
+// eslint-disable-next-line
+import ReturnedResponse from '../helpers/returnedResponse';
+import { CourseType } from '../normalizers/detailCourseNormalize';
 
 export interface MyCoursesInterface {
     inprocess: Array<MyCoursesType>,
@@ -13,6 +16,8 @@ export interface MyCoursesInterface {
 interface IAppStore {
     availableCategories: Array<CategoriesResponseType>,
     myCourses: MyCoursesInterface,
+    category?: CategoryResponseType,
+    course?: CourseType,
 }
 
 
@@ -23,8 +28,8 @@ export class AppStore implements IAppStore {
         inprocess: [],
         completed: [],
     };
-    category: any = {};
-    course: any = {};
+    category: CategoryResponseType | undefined;
+    course: CourseType | undefined;
     detailCourse: any = {};
     myCourse: any = {};
     lesson: any = {};
@@ -45,19 +50,19 @@ export class AppStore implements IAppStore {
         this.myCourses = MyCoursesNormalize(data);
     }
 
-    @action getCategory = () => {
-        return fetchMock(MocksEnum.Category)
+    @action getCategory = async (id: string) => {
+        return $api.get<CategoryResponseType>(`/api/v1/catalog/category/${id}`)
     }
 
-    @action setCategory = (data: any) => {
+    @action setCategory = (data: CategoryResponseType) => {
         this.category = data;
     }
 
-    @action getCourse = () => {
-        return fetchMock(MocksEnum.Course)
+    @action getCourse = async (id: string) => {
+        return  await $api.get<CategoryResponseType>(`/api/v1/catalog/course/${id}`)
     }
 
-    @action setCourse = (data: any) => {
+    @action setCourse = (data: CourseType) => {
         this.course = data;
     }
 

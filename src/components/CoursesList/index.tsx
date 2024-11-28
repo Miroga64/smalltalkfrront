@@ -1,21 +1,12 @@
 
 import style from './index.module.css'
-import CourseCard, { CourseCardProps } from "../CourseCard"
+import CourseCard from "../CourseCard"
 import { observer } from 'mobx-react'
+import { CategorySubcategories } from '../../normalizers/categoryCoursesNormalize';
 
-interface CoursesListProps {
-    items: Array<CourseCardProps>,
-    title: string
-    titlePadding?: number,
-    titleSize?: number,
-    negativeMargin?: number,
-    paddingLeft?: number,
-    withoutCount?: boolean,
-}
-
-const CoursesList = (props: CoursesListProps) => {
+const CoursesList = (props: CategorySubcategories) => {
     const {
-        items,
+        courses,
         title, 
         titlePadding, 
         withoutCount, 
@@ -47,7 +38,7 @@ const CoursesList = (props: CoursesListProps) => {
                 >{title}</div>
                 {
                     withoutCount && (
-                        <div className={style.count}>{items.length}</div>
+                        <div className={style.count}>{courses.length}</div>
                     )
                 }
             </div>
@@ -58,7 +49,7 @@ const CoursesList = (props: CoursesListProps) => {
                 }}
             >
                 {
-                    items.map((course) => (
+                    courses.map((course) => (
                         <CourseCard
                             key={course.id}
                             {...course}

@@ -1,4 +1,7 @@
-const wordNormalize = (word: string, count: number, sex = 'm') => {
+const wordNormalize = (word: string, count?: number, sex = 'm') => {
+    if(count === undefined) {
+        return ''
+    }
     let end: Array<string> = [];
     if(sex === 'm') {
         end = ['ов', '', 'а', 'а', 'а', 'ов', 'ов', 'ов', 'ов', 'ов', 'ов']

@@ -21,7 +21,7 @@ const CurtainContentCompleted = (props: any) => {
                 <div className={style.recomendationList}>
                     <CoursesList
                         title={'Подобрали для вас'}
-                        items={recomendations}
+                        courses={recomendations}
                         titlePadding={16}
                     />
                 </div>

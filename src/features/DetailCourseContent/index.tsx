@@ -5,27 +5,31 @@ import { observer } from 'mobx-react';
 
 
 const DetailCourseContent = () => {
-    const {detailCourse} = useAppStore();
-
-    const {title, modules} = detailCourse;
+    const {course} = useAppStore();
 
     return(
         <div className={style.wrapper}>
-            <div className={style.title}>{title}</div>
-            <div className={style.modulesContainer}>
-                {
-                    modules.map(({id, subtitle, title, items}: any, index: number) => (
-                        <div key={id} className={style.module}>
-                            <DropDownList
-                                subtitle={subtitle}
-                                title={title}
-                                startedItemsCount={index === 0 ? items.length : 0}
-                                items={items}
-                            />
+            {
+                course?.title && course?.modules && (
+                    <>
+                        <div className={style.title}>{course.title}</div>
+                        <div className={style.modulesContainer}>
+                            {
+                                course.modules.map((module: any, index: number) => (
+                                    <div key={module.id} className={style.module}>
+                                        <DropDownList
+                                            title={module.title}
+                                            startedItemsCount={index === 0 ? module.items.length : 0}
+                                            items={module.items}
+                                        />
+                                    </div>
+                                ))
+                            }
                         </div>
-                    ))
-                }
-            </div>
+                    </>
+                )
+            }
+            
         </div>
     )
 }

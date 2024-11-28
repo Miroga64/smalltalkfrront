@@ -21,10 +21,10 @@ $api.interceptors.response.use((config) => {
     return config
 }, async (error) => {
     const originalRequest = error.config;
-    if(error?.response?.status === 401 && error.config && !error.config._isRetry) {
+    if(error?.response?.status === 403 && error.config && !error.config._isRetry) {
         originalRequest._isRetry = true;
         try {
-            const response = await axios.post(`${baseUrl}/api/auth`, {
+            const response = await axios.get(`${baseUrl}/api/auth`, {
                 withCredentials: true,
                 headers: {
                     'X-TELEGRAM-INIT-DATA': sessionStorage.getItem('initData')

@@ -58,7 +58,7 @@ const LessonContent = () => {
                 <div className={style.need}>
                     <CoursesList
                         title={'Потребуется для урока'}
-                        items={lesson.recomendations}
+                        courses={lesson.recomendations}
                         negativeMargin={16}
                         paddingLeft={8}
                         titlePadding={16}

@@ -10,7 +10,7 @@ const CourseBanner = () => {
         <div
             className={style.wrapper}
             style={{
-                backgroundImage: `url(${course.src})`
+                backgroundImage: `url(${course?.image})`
             }}
         ></div>
     )

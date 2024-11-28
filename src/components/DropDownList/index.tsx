@@ -6,10 +6,10 @@ import { observer } from 'mobx-react';
 import Tag, { TagsTypes } from '../Tag';
 
 
-interface DropDownListItems {
+export type DropDownListItems = {
     title: string,
     path: string,
-    id: number,
+    id: string,
     isDisabled?: boolean,
     complete?: boolean,
 }

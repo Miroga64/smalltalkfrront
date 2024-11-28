@@ -1,15 +1,9 @@
 import style from './index.module.css'
 import { useAppStore } from "../../hooks/useAppStore"
-import { CourseCardProps } from "../../components/CourseCard"
 import CoursesList from "../../components/CoursesList"
 import { observer } from 'mobx-react'
+import CategoryCoursesNormalize, { CategorySubcategories } from '../../normalizers/categoryCoursesNormalize'
 
-
-interface CategoryInterface {
-    title: string,
-    id: number,
-    items: Array<CourseCardProps>
-}
 
 const CategoryContent = () => {
     const {category} = useAppStore();
@@ -17,11 +11,11 @@ const CategoryContent = () => {
     return(
         <div className={style.wrapper}>
                 {
-                    category.categories.map((category: CategoryInterface) => (
+                    category?.subcategories.map((subcategory: CategorySubcategories) => (
                         <div className={style.coursesWrapper}>
                             <CoursesList
                                 key={category.id}
-                                {...category}
+                                {...CategoryCoursesNormalize(subcategory)}
                             />
                         </div>
                     ))

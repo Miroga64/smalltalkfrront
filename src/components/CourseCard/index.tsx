@@ -3,20 +3,13 @@ import style from './index.module.css'
 import { NavLink } from "react-router-dom";
 import { STAR } from "../../icons";
 import { observer } from 'mobx-react';
+import { CategoryCourse } from '../../api/types';
 
-export interface CourseCardProps {
-    price?: number,
-    title?: string,
-    description: string,
-    mark?: number
-    image: string,
-    id: number
-}
 
-const CourseCard = (props: CourseCardProps) => {
+const CourseCard = (props: CategoryCourse) => {
     const {
         price,
-        description,
+        preview_text,
         mark,
         image,
         id,
@@ -33,7 +26,7 @@ const CourseCard = (props: CourseCardProps) => {
             <div className={style.content}>
                 <div className={style.top}>
                     {
-                        price && (<div className={style.price}>{price}.00 ₽</div>)
+                        price !== undefined && (<div className={style.price}>{price}.00 ₽</div>)
                     }
                     {
                         title && (<div className={style.price}>{title}</div>)
@@ -47,7 +40,7 @@ const CourseCard = (props: CourseCardProps) => {
                         )
                     }
                 </div>
-                <div className={style.description}>{description}</div>
+                <div className={style.description}>{preview_text}</div>
             </div>
         </NavLink>
     )
